@@ -35,6 +35,8 @@ then you can use px from your design, do not need transform it to others;
 	}
 ```
 
+####tools
+
 for compile scss you can use gui tools :
 
 codekit : http://incident57.com/codekit/
@@ -43,4 +45,6 @@ koala : http://www.koala-app.com/
 
 also you can use compass or sublimetext plug-in and so on ...
 
-scss document : http://www.w3cplus.com/sassguide/
+####related document
+
+scss : http://www.w3cplus.com/sassguide/
