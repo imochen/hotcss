@@ -1,0 +1,9 @@
+.box {
+  width: 15.5733333333rem;
+  height: 6.4rem;
+  background-color: #ff0000;
+  color: #fff;
+  -moz-border-radius: 0.32rem;
+  -webkit-border-radius: 0.32rem;
+  border-radius: 0.32rem;
+}

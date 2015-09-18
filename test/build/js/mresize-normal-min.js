@@ -1,0 +1,1 @@
+!function(e,n){"use strict";var t=function(){var t=e.innerWidth;return t?void(n.documentElement.style.fontSize=20*t/320+"px"):!1};t(),e.addEventListener("resize",t,!1),e.addEventListener("load",t,!1),e.mresize=t}(window,document);
