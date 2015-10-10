@@ -3,11 +3,11 @@
 
 use `rem` and dynamic html `font-size` 
 
-####mresize.js
+##mresize.js
 
-mresize-normal.js , it can register a method in window `window.mresize`;
+`mresize-normal.js` , it can register a method in window `window.mresize`;
 
-mresize-umd.js , for AMD & CMD or normal;
+`mresize-umd.js` , for AMD & CMD or normal;
 
 ```javascript
 	require(['mresize-umd'],function( mresize ){
@@ -18,7 +18,7 @@ mresize-umd.js , for AMD & CMD or normal;
 if you need to take the initiative to trigger events, otherwise you do not need to trigger `mresize()`;
 
 
-####mixins.scss
+##mixins.scss
 
 ```scss
 	@import 'mixins'
@@ -35,7 +35,7 @@ then you can use px from your design, do not need transform it to others;
 	}
 ```
 
-####tools
+##tools
 
 for compile scss you can use gui tools :
 
@@ -45,6 +45,15 @@ koala : http://www.koala-app.com/
 
 also you can use compass or sublimetext plug-in and so on ...
 
-####related document
+##related document
 
 scss : http://www.w3cplus.com/sassguide/
+
+
+##update
+
+####2015.10.10
+>in order to use 1px in retina screen, add scale to the resize, on load ,it can set meta viewport with dpr
+
+
+------
