@@ -1,0 +1,45 @@
+{
+  "name": "hotcss",
+  "version": "0.1.0",
+  "description": "a layout solution for mobile development , enjoy development .",
+  "main": "dest/hotcss.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imochen/hotcss.git"
+  },
+  "keywords": [
+    "rem",
+    "css3",
+    "mobile",
+    "layout",
+    "resize",
+    "font-size",
+    "scss",
+    "less",
+    "mixins",
+    "gulp",
+    "livereload"
+  ],
+  "author": "mochen <imochen@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imochen/hotcss/issues"
+  },
+  "homepage": "https://github.com/imochen/hotcss",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^1.2.0",
+    "gulp-less": "^3.0.3",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-ruby-sass": "^2.0.5",
+    "gulp-sequence": "^0.4.1",
+    "gulp-uglify": "^1.4.2",
+    "less-plugin-functions": "0.0.2"
+  }
+}
