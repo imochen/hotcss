@@ -7,9 +7,9 @@
 
 - [开始使用](#开始使用)
 
-	-- [hotcss.js](#hotcssjs)
+	- [hotcss.js](#hotcssjs)
 
-	-- [hotcss.**ss](#hotcssss)
+	- [hotcss.**ss](#hotcssss)
 
 - [如何编译](#如何编译)
 
