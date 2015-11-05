@@ -11,7 +11,7 @@ npm install hotcss --save
 ```
 
 ### 开始使用
-#####  引入`hotcss.js`，该JS必须在`<body>`前加载，如果能内嵌到HTML中，效果更好。当然这个JS是非常小的，只有区区几行，压缩后更是不值一提，建议使用内嵌方式直接写到`<head>`里面。
+引入`hotcss.js`，该JS必须在`<body>`前加载，如果能内嵌到HTML中，效果更好。当然这个JS是非常小的，只有区区几行，压缩后更是不值一提，建议使用内嵌方式直接写到`<head>`里面。
 ```html
 <!-- /index.html-->
 <script src="./bower_components/hotcss/dist/hotcss.js"></script>
@@ -20,7 +20,7 @@ npm install hotcss --save
 - 不能将此JS放到`<body>`后加载，或者异步加载。这样会导致加载完毕后页面一团乱，然后会有明显的视觉跳动，继而才会恢复正常。
 
 ------
-##### 根据你使用的css预编译语言，将`hotcss.less`/`hotcss.scss` import到你的less/scss文件中去，然后定义你的设计图宽度`designWidth`。
+根据你使用的css预编译语言，将`hotcss.less`/`hotcss.scss` import到你的less/scss文件中去，然后定义你的设计图宽度`designWidth`。
 ```javascript
 /*	/src/scss/style.scss */
 @import '../../bower_components/hotcss/dist/hotcss.scss';
