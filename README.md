@@ -24,13 +24,13 @@ npm install hotcss --save
 ```javascript
 /*	/src/scss/style.scss */
 @import '../../bower_components/hotcss/dist/hotcss.scss';
-$designWidth : 750
+$designWidth : 750;
 ```
 
 ```javascript
 /*	/src/less/style.less  */
 @import '../../bower_components/hotcss/dist/hotcss.less';
-@designWidth : 750
+@designWidth : 750;
 ```
 注意事项:
 - 如果你的设计图都是同样的宽度，你可以去`hotcss.**ss`中直接定义全局`designWidth`。
