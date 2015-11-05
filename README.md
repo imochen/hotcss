@@ -4,10 +4,8 @@
 - [介绍](#介绍)
 - [获取](#获取)
 - [开始使用](#开始使用)
-
 	- [hotcss.js](#hotcssjs)
-	- [hotcss.**ss](#hotcssss)
-
+	- [hotcss.less/hotcss.scss](#hotcssss)
 - [如何编译](#如何编译)
 
 
