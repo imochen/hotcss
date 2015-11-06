@@ -25,6 +25,8 @@
 
 另外，为了辅助开发`hotcss`提供了gulp编译，可查看[如何编译](#如何编译)
 
+提供一个演示示例。进入`src/test/`，使用`bower`安装`hotcss`即可体验。
+
 #### hotcss可以解决什么问题
 
 - `hotcss`不需要你再手动设置`viewport`，她会根据当前环境计算出最适合的`viewport`。
