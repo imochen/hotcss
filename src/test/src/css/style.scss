@@ -1,0 +1,13 @@
+@import '../../bower_components/hotcss/dest/hotcss.scss';
+$designWidth : 750;
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#a{
+	width: px2rem(375);
+	height: px2rem(500);
+	border: px2rem(10) solid red;
+}

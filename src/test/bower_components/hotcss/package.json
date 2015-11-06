@@ -1,0 +1,32 @@
+{
+  "name": "hotcss",
+  "version": "0.1.0",
+  "description": "a layout solution for mobile development , enjoy development .",
+  "main": "dest/hotcss.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imochen/hotcss.git"
+  },
+  "keywords": [
+    "rem",
+    "css3",
+    "mobile",
+    "layout",
+    "resize",
+    "font-size",
+    "scss",
+    "less",
+    "mixins",
+    "gulp",
+    "livereload"
+  ],
+  "author": "mochen <imochen@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imochen/hotcss/issues"
+  },
+  "homepage": "https://github.com/imochen/hotcss"
+}
