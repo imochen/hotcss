@@ -73,6 +73,20 @@ $designWidth : 750;
 
 作为一个解决方案，怎么可能让你自己费心再找编译方法呢，没错，这些都已经为你准备好了，你需要做的就是按步骤配置一下即可。
 
+建议开发目录，所有的开发都在src目录下进行，dev目录为开发目录，watch的时候访问此目录，release目录为发布目录
+```
+├── bower_components
+│   └── hotcss
+├── dev
+├── release
+├── src
+│   ├── css
+│   ├── img
+│   ├── index.html
+│   └── js
+└── tools
+```
+
 #### 配置gulp
 进入项目根目录，使用`cp`命令将`tools`文件夹复制到根目录，注意命令最后空格后有一个点。
 ```shell
