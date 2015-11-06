@@ -9,7 +9,8 @@
 	- [hotcss.js](#hotcssjs)
 	- [hotcss.less/hotcss.scss](#hotcssss)
 - [如何编译](#如何编译)
-
+	- [配置gulp](#配置gulp)
+	- [内置命令](#内置命令)
 
 ### 介绍
 
@@ -70,7 +71,7 @@ $designWidth : 750;
 作为一个解决方案，怎么可能让你自己费心再找编译方法呢，没错，这些都已经为你准备好了，你需要做的就是按步骤配置一下即可。
 
 #### 配置gulp
-进入项目根目录，使用`cp`命令将`tools`文件夹复制到根目录
+进入项目根目录，使用`cp`命令将`tools`文件夹复制到根目录，注意命令最后空格后有一个点。
 ```shell
 cp -R bower_components/hotcss/src/tools .
 cp -R node_modules/hotcss/src/tools .
@@ -81,3 +82,14 @@ cd tools/
 npm install
 ```
 配置`tools/config.js`怎么配置在注释里面都已经写的很清楚了，如仍然遇到问题，可以与我取得联系。
+
+在`tools`目录下执行`gulp watch`即可开始开发。
+
+#### 内置命令
+
+- `gulp css`：仅编译css预编译文件。
+- `gulp watch`：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。
+- `gulp release`：发布命令，根据配置文件编译/合并/压缩并生成，不处理html文件。
+- `gulp release -html`：带上html命令，会把html一并压缩。
+
+
