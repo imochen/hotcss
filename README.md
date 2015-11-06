@@ -86,13 +86,18 @@ npm install
 ```
 配置`tools/config.js`怎么配置在注释里面都已经写的很清楚了，如仍然遇到问题，可以与我取得联系。
 
-在`tools`目录下执行`gulp watch`即可开始开发。
+在`tools`目录下执行`gulp watch`
+
+使用浏览器打开`http://127.0.0.1:13097/dev/`
+
+享受开发的乐趣吧
 
 #### 内置命令
 
 - `gulp css`：仅编译css预编译文件。
+- `gulp watch-css`：仅watch css预编译文件，不会自动刷新。
 - `gulp watch`：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。
-- `gulp release`：发布命令，根据配置文件编译/合并/压缩并生成，不处理html文件。
+- `gulp release`：发布命令，根据配置文件编译/压缩并生成，不处理html文件。
 - `gulp release -html`：带上html命令，会把html一并压缩。
 
 
