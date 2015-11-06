@@ -44,8 +44,10 @@ var __dest = function( dirname ){
 gulp.task('webserver', function() {
 	gulp.src( '../' )
 		.pipe(webserver({
-			host:             '127.0.0.1',
-			port:             config.port
+			host : '127.0.0.1',
+			port : config.port,
+			open : 'http://127.0.0.1:'+config.port+'/dev',
+			fallback : 'index.html'
 		}));
 });
 
