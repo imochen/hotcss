@@ -100,7 +100,7 @@ gulp.task('watch-css',function(){
 	gulp.watch( __src( config.css.src) ,['css'] );
 });
 
-gulp.task('watch',['webserver'],function(){
+gulp.task('watch',['html','css','js','webserver'],function(){
 
 	livereload.listen();
 
