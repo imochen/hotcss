@@ -103,7 +103,7 @@ npm install hotcss --save
 <p>引入<code>hotcss.js</code>，该JS必须在<code>&lt;body&gt;</code>前加载，如果能内嵌到HTML中，效果更好。当然这个JS是非常小的，只有区区几行，压缩后更是不值一提，建议使用内嵌方式直接写到<code>&lt;head&gt;</code>里面。</p>
 
 <div class="highlight highlight-text-html-basic"><pre><span class="pl-c">&lt;!-- /index.html--&gt;</span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>./bower_components/hotcss/dist/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>../bower_components/hotcss/dest/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>注意事项:</p>
 
@@ -117,11 +117,11 @@ npm install hotcss --save
 <p>根据你使用的css预编译语言，将<code>hotcss.less</code>/<code>hotcss.scss</code> import到你的less/scss文件中去，然后定义你的设计图宽度<code>designWidth</code>。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">/*  /src/scss/style.scss */</span>
-@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dist/hotcss.scss<span class="pl-pds">'</span></span>;
+@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dest/hotcss.scss<span class="pl-pds">'</span></span>;
 $designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></div>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">/*  /src/less/style.less  */</span>
-@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dist/hotcss.less<span class="pl-pds">'</span></span>;
+@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dest/hotcss.less<span class="pl-pds">'</span></span>;
 @designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></div>
 
 <p>注意事项:</p>
