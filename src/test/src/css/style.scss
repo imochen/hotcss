@@ -4,10 +4,26 @@ $designWidth : 750;
 body{
 	margin: 0;
 	padding: 0;
+	background-color: #d0d0d0;
+}
+*{
+	box-sizing : border-box;
 }
 
 #a{
-	width: px2rem(375);
-	height: px2rem(400);
+	width: px2rem(750);
+	height: px2rem(200);
 	border: px2rem(10) solid red;
+}
+
+#b{
+	width: px2rem(750);
+	height: 100px;
+	font-size: 30px;
+	border: 1px solid blue;
+	.item{
+		width: px2rem(740/4);
+		border: 1px solid yellow;
+		float: left;
+	}
 }

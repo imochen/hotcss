@@ -2,6 +2,7 @@ var gulp = require('gulp'); //gulp
 var sass = require('gulp-ruby-sass'); //sass编译
 var less = require('gulp-less'); //less编译
 var minifyCss = require('gulp-minify-css'); //css压缩
+var autoprefixer = require('gulp-autoprefixer'); //自动补全前缀
 
 var LessPluginFunctions = require('less-plugin-functions'); //less functions插件
 functions = new LessPluginFunctions();
@@ -57,12 +58,14 @@ gulp.task('css',function(){
 
 	if( config.precompile === 'scss' ){
 		return sass( __src(config.css.src) )
+			.pipe(autoprefixer())
 			.pipe( gulp.dest( __dest( config.css.dest) ) )
 			.pipe(livereload());
 	}
 	if( config.precompile === 'less' ){
 		return gulp.src( __src(config.css.src) )
 			.pipe( less({ plugins : [functions]}))
+			.pipe(autoprefixer())
 			.pipe( gulp.dest( __dest( config.css.dest) ) )
 			.pipe(livereload());
 	}
