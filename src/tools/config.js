@@ -1,6 +1,6 @@
 module.exports = {
 
-	precompile : 'less', //CSS预处理器类型['less','scss'];
+	precompile : 'scss', //CSS预处理器类型['less','scss'];
 
 	port : 13097, //server端口
 
@@ -18,7 +18,7 @@ module.exports = {
 	},
 
 	css : {
-		src : '/css/*.less', //CSS预处理文件路径，支持通配符，数组
+		src : '/css/*.scss', //CSS预处理文件路径，支持通配符，数组
 		dest : '/css/' //CSS文件输出目录
 	},
 

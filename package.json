@@ -1,6 +1,6 @@
 {
   "name": "hotcss",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a layout solution for mobile development , enjoy development .",
   "main": "dest/hotcss.js",
   "scripts": {
