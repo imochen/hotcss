@@ -12,6 +12,7 @@
     "gulp-sequence": "^0.4.1",
     "gulp-uglify": "^1.4.2",
     "gulp-webserver": "^0.9.1",
-    "less-plugin-functions": "0.0.2"
+    "less-plugin-functions": "0.0.2",
+    "my-ip": "^1.1.1"
   }
 }

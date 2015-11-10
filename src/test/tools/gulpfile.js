@@ -23,6 +23,8 @@ var path = require('path'); //path
 
 var webserver = require('gulp-webserver'); //server
 
+var myIP = require('my-ip');//获取本机内网IP
+
 
 /**********************华丽的分割线*****************************/
 
@@ -45,9 +47,9 @@ var __dest = function( dirname ){
 gulp.task('webserver', function() {
 	gulp.src( '../' )
 		.pipe(webserver({
-			host : '127.0.0.1',
+			host : myIP(),
 			port : config.port,
-			open : 'http://127.0.0.1:'+config.port+'/dev',
+			open : 'http://'+ myIP() +':'+config.port+'/dev',
 			fallback : 'index.html'
 		}));
 });
