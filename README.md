@@ -78,14 +78,14 @@ $designWidth : 750;
 建议开发目录，所有的开发都在src目录下进行，dev目录为开发目录，watch的时候访问此目录，release目录为发布目录
 ```
 ├── bower_components
-│   └── hotcss
+│   └── hotcss
 ├── dev
 ├── release
 ├── src
-│   ├── css
-│   ├── img
-│   ├── index.html
-│   └── js
+│   ├── css
+│   ├── img
+│   ├── index.html
+│   └── js
 └── tools
 ```
 
@@ -104,7 +104,7 @@ npm install
 
 在`tools`目录下执行`gulp watch`
 
-~~如果当前环境有浏览器，会自动打开`http://127.0.0.1:13097/dev/` ~~
+~~如果当前环境有浏览器，会自动打开`http://127.0.0.1:13097/dev/`~~
 
 `1.0.4版本`中已经修改为自动打开`http://你的IP:13097/dev/`，方便同域下直接使用手机调试开发。
 
@@ -119,5 +119,3 @@ npm install
 - `gulp watch`：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。
 - `gulp release`：发布命令，根据配置文件编译/压缩并生成，不处理html文件。
 - `gulp release -html`：带上html命令，会把html一并压缩。
-
-
