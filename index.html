@@ -142,14 +142,14 @@ $designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></
 <p>建议开发目录，所有的开发都在src目录下进行，dev目录为开发目录，watch的时候访问此目录，release目录为发布目录</p>
 
 <pre><code>├── bower_components
-│   └── hotcss
+│   └── hotcss
 ├── dev
 ├── release
 ├── src
-│   ├── css
-│   ├── img
-│   ├── index.html
-│   └── js
+│   ├── css
+│   ├── img
+│   ├── index.html
+│   └── js
 └── tools
 </code></pre>
 
@@ -170,7 +170,9 @@ npm install</pre></div>
 
 <p>在<code>tools</code>目录下执行<code>gulp watch</code></p>
 
-<p>如果当前环境有浏览器，会自动打开<code>http://127.0.0.1:13097/dev/</code></p>
+<del>如果当前环境有浏览器，会自动打开`http://127.0.0.1:13097/dev/`</del>
+
+<p><code>1.0.4版本</code>中已经修改为自动打开<code>http://你的IP:13097/dev/</code>，方便同域下直接使用手机调试开发。</p>
 
 <p>享受开发的乐趣吧</p>
 
