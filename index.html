@@ -132,6 +132,7 @@ $designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></
 <li>如果你的设计图都是同样的宽度，你可以去<code>hotcss.**ss</code>中直接定义全局<code>designWidth</code>。</li>
 <li>每个css预编译文件都需要导入<code>hotcss.**ss</code>,如果你没有全局的<code>designWidth</code>，还需要定义<code>designWidth</code>。</li>
 <li>在css预编译文件中使用<code>px2rem(375)</code>，尺寸是你在设计图上测量出来的px值，无需经过任何处理。直接交给<code>px2rem</code>即可。</li>
+<li>新版的hotcss已经不建议使用mixins了，因为编译工具里面有<code>autoprefixer</code>。如果你仍然需要mixins，以后的版本会更新上。</li>
 </ul>
 
 <h3>
