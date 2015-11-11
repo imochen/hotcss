@@ -70,6 +70,7 @@ $designWidth : 750;
 - 如果你的设计图都是同样的宽度，你可以去`hotcss.**ss`中直接定义全局`designWidth`。
 - 每个css预编译文件都需要导入`hotcss.**ss`,如果你没有全局的`designWidth`，还需要定义`designWidth`。
 - 在css预编译文件中使用`px2rem(375)`，尺寸是你在设计图上测量出来的px值，无需经过任何处理。直接交给`px2rem`即可。
+- 新版的hotcss已经不建议使用mixins了，因为编译工具里面有`autoprefixer`。如果你仍然需要mixins，以后的版本会更新上。
 
 ### 如何编译
 
