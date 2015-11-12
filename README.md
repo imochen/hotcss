@@ -9,6 +9,7 @@
 	- [如何编译](#如何编译)
 		- [配置gulp](#配置gulp)
 		- [内置命令](#内置命令)
+	- [更新日志](#更新日志)
 
 # hotcss
 
@@ -120,3 +121,9 @@ npm install
 - `gulp watch`：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。
 - `gulp release`：发布命令，根据配置文件编译/压缩并生成，不处理html文件。
 - `gulp release -html`：带上html命令，会把html一并压缩。
+
+
+### 更新日志
+
+`1.0.5` gulp新增自动复制图片到dev目录，release目录。暂未实现压缩。
+`1.0.4` 修改`gulp watch`时打开的地址为`http://你的IP:13097/dev/`。方便同域下直接使用手机调试开发。
