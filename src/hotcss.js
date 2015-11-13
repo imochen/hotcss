@@ -22,8 +22,12 @@
 
 			var style = document.createElement('style');
 
-				style.innerHTML = 'html{transform:scale('+ 1/dpr +'); webkit-transform:scale('+ 1/dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; } body{ transform:scale('+ dpr +'); webkit-transform:scale('+ dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; }';
+			style.innerHTML = 'html{transform:scale('+ 1/dpr +'); webkit-transform:scale('+ 1/dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; } body{ transform:scale('+ dpr +'); webkit-transform:scale('+ dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; }';
 
+			viewport = document.createElement('meta');
+			viewport.setAttribute('name', 'viewport');
+			viewport.setAttribute('content', content);
+			document.head.appendChild( viewport );
 			document.head.appendChild( style );
 
 			return false;
