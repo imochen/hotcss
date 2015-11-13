@@ -8,7 +8,27 @@
 		var viewport = document.querySelector('meta[name="viewport"]'),
 			dpr = window.devicePixelRatio || 1,
 			scale = 1 / dpr,
-			content = 'width=device-width, initial-scale='+ scale +', minimum-scale='+ scale +', maximum-scale='+ scale +', user-scalable=no';
+			ua = window.navigator.userAgent.toLowerCase(),
+			isIPhoneWeixin = (function(){
+				return (ua.indexOf('iphone') > 0 ) && (ua.indexOf('micromessenger') > 0);
+			})();
+
+		if( isIPhoneWeixin ){ scale = 1 }
+
+		var content = 'width=device-width, initial-scale='+ scale +', minimum-scale='+ scale +', maximum-scale='+ scale +', user-scalable=no';
+
+
+		if( isIPhoneWeixin ){
+
+			var style = document.createElement('style');
+
+				style.innerHTML = 'html{transform:scale('+ 1/dpr +'); webkit-transform:scale('+ 1/dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; } body{ transform:scale('+ dpr +'); webkit-transform:scale('+ dpr +'); transform-origin:0 0; webkitTransform-origin:0 0; }';
+
+			document.head.appendChild( style );
+
+			return false;
+		}
+
 
 		if( viewport ){
 			viewport.setAttribute('content', content);
