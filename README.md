@@ -10,10 +10,13 @@
 - 不仅便捷了你的布局，同时它使用起来异常简单。可能你要说 `talk is cheap,show me the code`，那我现在列下hotcss整个项目的目录结构。
 
 ```
-├── example		//所有的示例都在这个目录下
+├── example	//所有的示例都在这个目录下
 │   └── index.html
-└── src		//主要文件在这里
-    └── hotcss.js
+│
+└── src	//主要文件在这里
+    ├── hotcss.js
+    ├── px2rem.less
+    └── px2rem.scss
 ```
 
 ### 优势
@@ -60,6 +63,8 @@ $designWidth : 750; //如设计图是750
 ```
 `$designWidth`必须要在使用`px2rem`前定义。否则scss编译会出错。
 
+
+注意：如果使用less，则需要引入`less-plugin-functions`，普通的less编译工具无法正常编译。
 
 
 ### 接口说明
