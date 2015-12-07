@@ -1,51 +1,48 @@
 # hotcss
-> Make Mobile Development Layout More Easy ！
+> 让移动端布局开发更加容易
 
-### Intro
+### 介绍
+`hotcss`不是一个库，也不是一个框架。它是一个移动端布局开发解决方案。使用`hotcss`可以让移动端布局开发更容易。
 
-`hotcss` is not a library , also is not a framework . it is a solution for mobile development layout . use `hotcss` can make mobile development layout more easy . 
+`hotcss`遵循视觉一致性原则。在不同大小的屏幕和不同的设备像素密度下，让你的页面看起来是一样的。
 
-`hotcss` follow the rule of visual consistency . that is in different screen and different dpr , make your page seems to be same . 
+`hotcss`不仅便捷了你的布局，同时它使用起来异常简单。
+可能你要说 `talk is cheap,show me the code`，那我现在列下hotcss整个项目的目录结构。
 
-`hotcss` make layout more easy，also  it is very easy to use ！
-maybe you say talk is cheap , now I will show you the directory of `hotcss`
 ```
-├── README.md
-├── bower.json
-├── example		//here is all examples
+├── example		//所有的示例都在这个目录下
 │   └── index.html
-├── package.json
-└── src		//here is the main file dir
+└── src		//主要文件在这里
     └── hotcss.js
 ```
 
-### Usage
+### 用法
 
 ```
 <script src="/path/to/hotcss.js"></script>
 ``` 
 
-`hotcss.js` must be loaded as soon as possible , you can not put it after `<body>` or use via async .
+`hotcss.js`必须尽可能早的加载，千万不要放到`<body>`标签后面或者异步加载它。
+如果可以，你应将`hotcss.js`的内容以内嵌的方式写到`<head>`标签里面进行加载，并且在别的js文件之前。
 
-If possible , you should put the content of `hotcss.js` into the `<head>`, and before other js files . 
 
 
-###Apis
+### 接口说明
 
-- Set the meta scale to 1
+- 强制设置DPR为1
 ```
 <meta name="hotcss" content="initial-dpr=1">
 <script src="/path/to/hotcss.js"></script>
 ```
-- Functions
+- 方法
 ```javascript
-//recalculate layout
+//重新计算布局，一般不需要你手动调用。
 hotcss.mresize();
 
-//conversion px to rem
+//将px转换为rem。
 hotcss.px2rem( px , designWidth );
 
-//you can define hotcss.designWidth first
+//你可以预先定义hotcss.designWidth，此后使用px2rem，就不需要传递designWidth值了
 hotcss.designWidth = 750;
 hotcss.px2rem(200);
 hotcss.px2rem(350);
