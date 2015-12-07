@@ -18,9 +18,10 @@
 
 ### 优势
 
-- 不需要你再手动设置`viewport`，它会根据当前环境计算出最适合的`viewport`。
+- 保证不同设备下的统一视觉体验。
+- 不需要你再手动设置`viewport`，根据当前环境计算出最适合的`viewport`。
 - 支持任意尺寸的设计图，不再局限于[640,750,1125]。
-- 支持同一项目，多种设计图尺寸，专为解决大型，长周期项目。
+- 支持单一项目，多种设计图尺寸，专为解决大型，长周期项目。
 - 提供`px2rem`转换方法，CSS布局，零成本转换，原始值不丢失。
 - 有效解决移动端真实1像素问题。
 
@@ -37,7 +38,27 @@
 
 #### css要怎么写
 
+你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less`两个文件。没错，这就是`hotcss`提供的将px专为rem的方法。
 
+推荐使用scss来编写css，在scss文件的头部使用`import`将`px2rem`导入
+
+```scss
+@import '/path/to/px2rem.scss';
+```
+
+如果你的项目是单一尺寸设计图，那么你需要去px2rem.scss中定义全局的`designWidth`。
+```scss
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+$designWidth : 750; //如设计图是750
+```
+如果你的项目是多尺寸设计图，那么就不能定义全局的`designWidth`了。需要在你的业务`scss`中单独定义。如以下是`style.scss`
+```scss
+@import '/path/to/px2rem.scss';
+$designWidth : 750; //如设计图是750
+```
+`$designWidth`必须要在使用`px2rem`前定义。否则scss编译会出错。
 
 
 
