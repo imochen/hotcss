@@ -1,0 +1,29 @@
+{
+  "name": "hotcss",
+  "description": "Make Mobile Development Layout More Easy.",
+  "main": "hotcss.js",
+  "authors": [
+    "mochen <imochen@163.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "dev_tools",
+    "src",
+    "example",
+    "package.json",
+    ".gitignore",
+    ".npmignore"
+  ],
+  "keywords": [
+    "rem",
+    "css3",
+    "mobile",
+    "layout",
+    "resize",
+    "scss",
+    "less",
+    "hotcss",
+    "mochen"
+  ],
+  "homepage": "https://github.com/imochen/hotcss"
+}

@@ -1,0 +1,5 @@
+dev_tools/
+src/
+example/
+.gitignore
+bower.json
