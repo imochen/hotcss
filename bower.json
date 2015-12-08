@@ -12,7 +12,9 @@
     "example",
     "package.json",
     ".gitignore",
-    ".npmignore"
+    ".npmignore",
+    ".sass-cache",
+    "config.codekit"
   ],
   "keywords": [
     "rem",
