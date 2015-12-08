@@ -1,130 +1,91 @@
-- [hotcss](#hotcss)
-	- [介绍](#介绍)
-		- [hotcss是什么鬼](#hotcss是什么鬼)
-		- [hotcss可以解决什么问题](#hotcss可以解决什么问题)
-	- [获取](#获取)
-	- [开始使用](#开始使用)
-		- [hotcss.js](#hotcssjs)
-		- [hotcss.less/hotcss.scss](#hotcssss)
-	- [如何编译](#如何编译)
-		- [配置gulp](#配置gulp)
-		- [内置命令](#内置命令)
-	- [更新日志](#更新日志)
-
 # hotcss
-
-> 移动端布局解决方案  --- 简洁而不简单
-
+> 让移动端布局开发更加容易
 
 ### 介绍
 
-#### hotcss是什么鬼
+- `hotcss`不是一个库，也不是一个框架。它是一个移动端布局开发解决方案。使用`hotcss`可以让移动端布局开发更容易。
 
-`hotcss`不是一个库，亦不是一个框架。通俗点讲，这是一个解决方案。用于解决移动端布局中遇到的单位等问题。
+- 使用动态的HTML根字体大小和动态的viewport scale。
 
-`hotcss`遵循视觉一致性原则，即不同屏幕下页面比例是一致的，同时`hotcss`不提倡使用在跨设备的开发中（当然不提倡和不可以是两个概念）。
+- 遵循视觉一致性原则。在不同大小的屏幕和不同的设备像素密度下，让你的页面看起来是一样的。
 
-另外，为了辅助开发`hotcss`提供了gulp编译，可查看[如何编译](#如何编译)
+- 不仅便捷了你的布局，同时它使用起来异常简单。可能你会说 `talk is cheap,show me the code`，那我现在列下hotcss整个项目的目录结构。
 
-提供一个演示示例。进入`src/test/`，使用`bower`安装`hotcss`即可体验。
-
-#### hotcss可以解决什么问题
-
-- `hotcss`不需要你再手动设置`viewport`，她会根据当前环境计算出最适合的`viewport`。
-- 在使用`hotcss`的过程中，所有的单位应该使用px2rem，无论css中还是JS中。
-- 上述提到的`所有的单位`并不准确，如果你需要解决移动端1px这个世纪难题，则可以直接写1px，而无需使用px2rem。并且，这个1px在所有设备中是真的1px。
-- 同时`hotcss`支持单项目多设计图（设计图尺寸不一样），只需要在你的css中定义设计图尺寸即可
-
-### 获取
-可以使用`bower`或者`npm`来安装`hotcss`。
 ```
-bower install hotcss --save
-npm install hotcss --save
+├── example	//所有的示例都在这个目录下
+│   └── index.html
+│
+└── src	//主要文件在这里
+    ├── hotcss.js
+    ├── px2rem.less
+    └── px2rem.scss
 ```
-如果你不乐意使用这两种方法，也可以直接复制源码或者使用`git clone`等你喜欢的方式。
 
-### 开始使用
+### 优势
 
-#### hotcss.js
-引入`hotcss.js`，该JS必须在`<body>`前加载，如果能内嵌到HTML中，效果更好。当然这个JS是非常小的，只有区区几行，压缩后更是不值一提，建议使用内嵌方式直接写到`<head>`里面。
-```html
-<!-- /index.html-->
-<script src="../bower_components/hotcss/dest/hotcss.js"></script>
+- 保证不同设备下的统一视觉体验。
+- 不需要你再手动设置`viewport`，根据当前环境计算出最适合的`viewport`。
+- 支持任意尺寸的设计图，不再局限于[640,750,1125]。
+- 支持单一项目，多种设计图尺寸，专为解决大型，长周期项目。
+- 提供`px2rem`转换方法，CSS布局，零成本转换，原始值不丢失。
+- 有效解决移动端真实1像素问题。
+
+### 用法
+
+#### 引入hotcss.js
+
 ```
-注意事项:
-- 不能将此JS放到`<body>`后加载，或者异步加载。这样会导致加载完毕后页面一团乱，然后会有明显的视觉跳动，继而才会恢复正常。
+<script src="/path/to/hotcss.js"></script>
+``` 
 
-#### hotcss.**ss
-根据你使用的css预编译语言，将`hotcss.less`/`hotcss.scss` import到你的less/scss文件中去，然后定义你的设计图宽度`designWidth`。
+`hotcss.js`必须尽可能早的加载，千万不要放到`<body>`标签后面或者异步加载它。
+如果可以，你应将`hotcss.js`的内容以内嵌的方式写到`<head>`标签里面进行加载，并且在别的js文件之前。
+
+#### css要怎么写
+
+你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less`两个文件。没错，这就是`hotcss`提供的将px专为rem的方法。
+
+推荐使用scss来编写css，在scss文件的头部使用`import`将`px2rem`导入
+
+```scss
+@import '/path/to/px2rem.scss';
+```
+
+如果你的项目是单一尺寸设计图，那么你需要去px2rem.scss中定义全局的`designWidth`。
+```scss
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+$designWidth : 750; //如设计图是750
+```
+如果你的项目是多尺寸设计图，那么就不能定义全局的`designWidth`了。需要在你的业务`scss`中单独定义。如以下是`style.scss`
+```scss
+@import '/path/to/px2rem.scss';
+$designWidth : 750; //如设计图是750
+```
+`$designWidth`必须要在使用`px2rem`前定义。否则scss编译会出错。
+
+
+注意：如果使用less，则需要引入`less-plugin-functions`，普通的less编译工具无法正常编译。
+
+
+### 接口说明
+
+- 强制设置DPR为1
+```
+<meta name="hotcss" content="initial-dpr=1">
+<script src="/path/to/hotcss.js"></script>
+```
+- 方法
 ```javascript
-/*	/src/scss/style.scss */
-@import '../../bower_components/hotcss/dest/hotcss.scss';
-$designWidth : 750;
+//重新计算布局，一般不需要你手动调用。
+hotcss.mresize();
+
+//将px转换为rem。
+hotcss.px2rem( px , designWidth );
+
+//你可以预先定义hotcss.designWidth，此后使用px2rem，就不需要传递designWidth值了
+hotcss.designWidth = 750;
+hotcss.px2rem(200);
+hotcss.px2rem(350);
 ```
-
-```javascript
-/*	/src/less/style.less  */
-@import '../../bower_components/hotcss/dest/hotcss.less';
-@designWidth : 750;
-```
-注意事项:
-- 如果你的设计图都是同样的宽度，你可以去`hotcss.**ss`中直接定义全局`designWidth`。
-- 每个css预编译文件都需要导入`hotcss.**ss`,如果你没有全局的`designWidth`，还需要定义`designWidth`。
-- 在css预编译文件中使用`px2rem(375)`，尺寸是你在设计图上测量出来的px值，无需经过任何处理。直接交给`px2rem`即可。
-- 新版的hotcss已经不建议使用mixins了，因为编译工具里面有`autoprefixer`。如果你仍然需要mixins，以后的版本会更新上。
-
-### 如何编译
-
-作为一个解决方案，怎么可能让你自己费心再找编译方法呢，没错，这些都已经为你准备好了，你需要做的就是按步骤配置一下即可。
-
-建议开发目录，所有的开发都在src目录下进行，dev目录为开发目录，watch的时候访问此目录，release目录为发布目录
-```
-├── bower_components
-│   └── hotcss
-├── dev
-├── release
-├── src
-│   ├── css
-│   ├── img
-│   ├── index.html
-│   └── js
-└── tools
-```
-
-#### 配置gulp
-进入项目根目录，使用`cp`命令将`tools`文件夹复制到根目录，注意命令最后空格后有一个点。
-```shell
-cp -R bower_components/hotcss/src/tools .
-cp -R node_modules/hotcss/src/tools .
-```
-进入tools目录，执行`npm install`安装必需的package。
-```shell
-cd tools/
-npm install
-```
-配置`tools/config.js`怎么配置在注释里面都已经写的很清楚了，如仍然遇到问题，可以与我取得联系。
-
-在`tools`目录下执行`gulp watch`
-
-<del>如果当前环境有浏览器，会自动打开`http://127.0.0.1:13097/dev/`</del>
-
-`1.0.4版本`中已经修改为自动打开`http://你的IP:13097/dev/`，方便同域下直接使用手机调试开发。
-
-
-
-享受开发的乐趣吧
-
-#### 内置命令
-
-- `gulp css`：仅编译css预编译文件。
-- `gulp watch-css`：仅watch css预编译文件，不会自动刷新。
-- `gulp watch`：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。
-- `gulp release`：发布命令，根据配置文件编译/压缩并生成，不处理html文件。
-- `gulp release -html`：带上html命令，会把html一并压缩。
-
-
-### 更新日志
-
-`1.0.5` gulp新增自动复制图片到dev目录，release目录。暂未实现压缩。
-
-`1.0.4` 修改`gulp watch`时打开的地址为`http://你的IP:13097/dev/`。方便同域下直接使用手机调试开发。

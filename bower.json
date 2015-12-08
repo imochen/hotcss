@@ -1,33 +1,29 @@
 {
   "name": "hotcss",
-  "description": "a layout solution for mobile development , enjoy development .",
-  "main": "dest/hotcss.js",
+  "description": "Make Mobile Development Layout More Easy.",
+  "main": "hotcss.js",
   "authors": [
     "mochen <imochen@163.com>"
   ],
   "license": "MIT",
+  "ignore": [
+    "dev_tools",
+    "src",
+    "example",
+    "package.json",
+    ".gitignore",
+    ".npmignore"
+  ],
   "keywords": [
     "rem",
     "css3",
     "mobile",
     "layout",
     "resize",
-    "font-size",
     "scss",
     "less",
-    "mixins",
-    "gulp",
-    "livereload"
+    "hotcss",
+    "mochen"
   ],
-  "homepage": "https://github.com/imochen/hotcss",
-  "moduleType": [
-    "globals"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "homepage": "https://github.com/imochen/hotcss"
 }

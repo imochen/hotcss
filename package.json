@@ -1,10 +1,10 @@
 {
   "name": "hotcss",
   "version": "2.0.0",
-  "description": "a layout solution for mobile development , enjoy development .",
-  "main": "dest/hotcss.js",
+  "description": "Make Mobile Development Layout More Easy.",
+  "main": "hotcss.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,12 +16,10 @@
     "mobile",
     "layout",
     "resize",
-    "font-size",
     "scss",
     "less",
-    "mixins",
-    "gulp",
-    "livereload"
+    "hotcss",
+    "mochen"
   ],
   "author": "mochen <imochen@163.com>",
   "license": "MIT",

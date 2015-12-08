@@ -5,18 +5,31 @@
 	(function(){
 		//根据devicePixelRatio自定计算scale
 		//可以有效解决移动端1px这个世纪难题。
-		var viewport = document.querySelector('meta[name="viewport"]'),
-			dpr = window.devicePixelRatio || 1,
-			scale = 1 / dpr,
+		var viewportEl = document.querySelector('meta[name="viewport"]'),
+			hotcssEl = document.querySelector('meta[name="hotcss"]'),
+			dpr = window.devicePixelRatio || 1;
+
+		//允许通过自定义name为hotcss的meta头，通过initial-dpr来强制定义页面缩放
+		if( hotcssEl ){
+			var hotcssCon = hotcssEl.getAttribute('content');
+			if( hotcssCon ){
+				var initialDpr = hotcssCon.match(/initial\-dpr=([\d\.]+)/);
+				if( initialDpr ){
+					dpr = parseFloat(initialDpr[1]);
+				}
+			}
+		}
+
+		var	scale = 1 / dpr,
 			content = 'width=device-width, initial-scale='+ scale +', minimum-scale='+ scale +', maximum-scale='+ scale +', user-scalable=no';
 
-		if( viewport ){
-			viewport.setAttribute('content', content);
+		if( viewportEl ){
+			viewportEl.setAttribute('content', content);
 		}else{
-			viewport = document.createElement('meta');
-			viewport.setAttribute('name', 'viewport');
-			viewport.setAttribute('content', content);
-			document.head.appendChild( viewport );
+			viewportEl = document.createElement('meta');
+			viewportEl.setAttribute('name', 'viewport');
+			viewportEl.setAttribute('content', content);
+			document.head.appendChild( viewportEl );
 		}
 
 	})();
@@ -58,7 +71,7 @@
 	setTimeout(function(){
 		hotcss.mresize(); 
 		//防止某些机型怪异现象，异步再调用一次
-	},0)
+	},300)
 
 	window.hotcss = hotcss; 
 	//命名空间暴露给你，控制权交给你，想怎么调怎么调。
