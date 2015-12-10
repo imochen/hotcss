@@ -52,7 +52,7 @@
 
 #### css要怎么写
 
-你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less`两个文件。没错，这就是`hotcss`提供的将px专为rem的方法。
+你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less`两个文件。没错，这就是`hotcss`提供的将px转为rem的方法。
 
 推荐使用scss来编写css，在scss文件的头部使用`import`将`px2rem`导入
 
