@@ -8,7 +8,7 @@ body {
 body {
   position: relative;
   width: px2rem(750);
-  background: #f3ecd1 url(../i/body-bg11.jpg) repeat;
+  background: #f3ecd1 url(../img/body-bg11.jpg) repeat;
   background-size: cover;
 }
 .container {
@@ -33,7 +33,7 @@ body {
   width: px2rem(720);
   height: px2rem(107);
   margin: 0 auto px2rem(25);
-  background: url(../i/text.png) no-repeat;
+  background: url(../img/text.png) no-repeat;
   background-size: cover;
   font: px2rem(26)/px2rem(32) 'simhei';
   color: #fff6d1;
@@ -53,7 +53,7 @@ body {
   height: px2rem(70);
   margin-left: px2rem(50);
   padding: 0 0 0 px2rem(45);
-  background: url(../i/text-time-icon.png) no-repeat 0 50%;
+  background: url(../img/text-time-icon.png) no-repeat 0 50%;
   font: px2rem(38)/px2rem(70) 'simhei';
   color: #ebe5ca;
 }
@@ -76,7 +76,7 @@ body {
   width: px2rem(50);
   height: px2rem(71);
   margin-right: px2rem(3);
-  background: url(../i/text-num-bg.png) no-repeat;
+  background: url(../img/text-num-bg.png) no-repeat;
   background-size: cover;
   font: px2rem(64)/px2rem(70) 'Arial';
   color: #fff228;
@@ -107,7 +107,7 @@ body {
   width: px2rem(500);
   height: px2rem(356);
   margin: 0 auto;
-  background: url(../i/btn-duang.png) no-repeat;
+  background: url(../img/btn-duang.png) no-repeat;
   background-size: cover;
   -webkit-user-select: none;
           user-select: none;
@@ -126,7 +126,7 @@ body {
   right: px2rem(40);
   width: px2rem(221);
   height: px2rem(235);
-  background: url(../i/hand.png) no-repeat;
+  background: url(../img/hand.png) no-repeat;
   background-size: cover;
 }
 .footer {
@@ -135,7 +135,7 @@ body {
   display: inline-block;
   width: px2rem(750);
   height: px2rem(132);
-  background: url(../i/btn-bottom.png) no-repeat;
+  background: url(../img/btn-bottom.png) no-repeat;
   background-size: 100% px2rem(132);
   font-size: 0;
 }

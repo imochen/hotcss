@@ -6,7 +6,7 @@ body {
 body {
   position: relative;
   width: 16rem;
-  background: #f3ecd1 url(../i/body-bg11.jpg) repeat;
+  background: #f3ecd1 url(../img/body-bg11.jpg) repeat;
   background-size: cover;
 }
 
@@ -34,7 +34,7 @@ body {
   width: 15.36rem;
   height: 2.28267rem;
   margin: 0 auto .53333rem;
-  background: url(../i/text.png) no-repeat;
+  background: url(../img/text.png) no-repeat;
   background-size: cover;
   font: .55467rem/.68267rem 'simhei';
   color: #fff6d1;
@@ -56,7 +56,7 @@ body {
   height: 1.49333rem;
   margin-left: 1.06667rem;
   padding: 0 0 0 .96rem;
-  background: url(../i/text-time-icon.png) no-repeat 0 50%;
+  background: url(../img/text-time-icon.png) no-repeat 0 50%;
   font: .81067rem/1.49333rem 'simhei';
   color: #ebe5ca;
 }
@@ -83,7 +83,7 @@ body {
   width: 1.06667rem;
   height: 1.51467rem;
   margin-right: .064rem;
-  background: url(../i/text-num-bg.png) no-repeat;
+  background: url(../img/text-num-bg.png) no-repeat;
   background-size: cover;
   font: 1.36533rem/1.49333rem 'Arial';
   color: #fff228;
@@ -114,7 +114,7 @@ body {
   width: 10.66667rem;
   height: 7.59467rem;
   margin: 0 auto;
-  background: url(../i/btn-duang.png) no-repeat;
+  background: url(../img/btn-duang.png) no-repeat;
   background-size: cover;
   -webkit-user-select: none;
           user-select: none;
@@ -135,7 +135,7 @@ body {
   right: .85333rem;
   width: 4.71467rem;
   height: 5.01333rem;
-  background: url(../i/hand.png) no-repeat;
+  background: url(../img/hand.png) no-repeat;
   background-size: cover;
 }
 
@@ -145,7 +145,7 @@ body {
   display: inline-block;
   width: 16rem;
   height: 2.816rem;
-  background: url(../i/btn-bottom.png) no-repeat;
+  background: url(../img/btn-bottom.png) no-repeat;
   background-size: 100% 2.816rem;
   font-size: 0;
 }
