@@ -13,9 +13,9 @@
 
 ```javascript
 ├── example	//所有的示例都在这个目录下
-│   ├── duang/
-│   ├── normal/
-│   └── wolf/
+│   ├── duang
+│   ├── normal
+│   └── wolf
 │
 └── src	//主要文件在这里
     ├── hotcss.js
@@ -30,6 +30,15 @@
 | 灰太狼    |   http://imochen.github.io/hotcss/example/wolf/ | [阳阳](https://github.com/iwuly) |
 
 
+### 谁在用hotcss
+
+- [美丽说HIGO](http://higo.meilishuo.com/)
+- [奇虎360](http://www.360.com/)
+- [爆米兔](http://www.baomitu.com/)
+- [一起作业](http://17zuoye.com/)
+- [TalkingData](http://www.talkingdata.com/)
+- [电兔金服](http://www.diantujinfu.com/)
+
 ### 优势
 
 - 保证不同设备下的统一视觉体验。
@@ -43,7 +52,7 @@
 
 #### 引入hotcss.js
 
-```
+```html
 <script src="/path/to/hotcss.js"></script>
 ``` 
 
@@ -81,7 +90,7 @@ $designWidth : 750; //如设计图是750
 ### 接口说明
 
 - 强制设置dpr
-```
+```html
 <meta name="hotcss" content="initial-dpr=1">
 <script src="/path/to/hotcss.js"></script>
 <!--
