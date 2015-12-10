@@ -1,214 +1,139 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>hotcss by imochen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">hotcss</h1>
-      <h2 class="project-tagline">移动端布局解决方案 --- 简洁而不简单</h2>
-      <a href="https://github.com/imochen/hotcss" class="btn">View on GitHub</a>
-      <a href="https://github.com/imochen/hotcss/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/imochen/hotcss/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
-      <ul>
-<li>
-<a href="#hotcss">hotcss</a>
-
-<ul>
-<li>
-<a href="#%E4%BB%8B%E7%BB%8D">介绍</a>
-
-<ul>
-<li><a href="#hotcss%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC">hotcss是什么鬼</a></li>
-<li><a href="#hotcss%E5%8F%AF%E4%BB%A5%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">hotcss可以解决什么问题</a></li>
-</ul>
-</li>
-<li><a href="#%E8%8E%B7%E5%8F%96">获取</a></li>
-<li>
-<a href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8">开始使用</a>
-
-<ul>
-<li><a href="#hotcssjs">hotcss.js</a></li>
-<li><a href="#hotcssss">hotcss.less/hotcss.scss</a></li>
-</ul>
-</li>
-<li>
-<a href="#%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91">如何编译</a>
-
-<ul>
-<li><a href="#%E9%85%8D%E7%BD%AEgulp">配置gulp</a></li>
-<li><a href="#%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4">内置命令</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97">更新日志</a></li>
-</ul>
-</li>
-</ul>
-
-<h1>
+    <div class="wrapper">
+      <header>
+        <h1>hotcss</h1>
+        <p>移动端布局解决方案 --- 简洁而不简单</p>
+        <p class="view"><a href="https://github.com/imochen/hotcss">View the Project on GitHub <small>imochen/hotcss</small></a></p>
+        <ul>
+          <li><a href="https://github.com/imochen/hotcss/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/imochen/hotcss/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/imochen/hotcss">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
 <a id="hotcss" class="anchor" href="#hotcss" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss</h1>
 
 <blockquote>
-<p>移动端布局解决方案  --- 简洁而不简单</p>
+<p>让移动端布局开发更加容易</p>
 </blockquote>
 
 <h3>
 <a id="介绍" class="anchor" href="#%E4%BB%8B%E7%BB%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>介绍</h3>
 
-<h4>
-<a id="hotcss是什么鬼" class="anchor" href="#hotcss%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss是什么鬼</h4>
-
-<p><code>hotcss</code>不是一个库，亦不是一个框架。通俗点讲，这是一个解决方案。用于解决移动端布局中遇到的单位等问题。</p>
-
-<p><code>hotcss</code>遵循视觉一致性原则，即不同屏幕下页面比例是一致的，同时<code>hotcss</code>不提倡使用在跨设备的开发中（当然不提倡和不可以是两个概念）。</p>
-
-<p>另外，为了辅助开发<code>hotcss</code>提供了gulp编译，可查看<a href="#%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91">如何编译</a></p>
-
-<p>提供一个演示示例。进入<code>src/test/</code>，使用<code>bower</code>安装<code>hotcss</code>即可体验。</p>
-
-<h4>
-<a id="hotcss可以解决什么问题" class="anchor" href="#hotcss%E5%8F%AF%E4%BB%A5%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss可以解决什么问题</h4>
-
 <ul>
-<li>
-<code>hotcss</code>不需要你再手动设置<code>viewport</code>，她会根据当前环境计算出最适合的<code>viewport</code>。</li>
-<li>在使用<code>hotcss</code>的过程中，所有的单位应该使用px2rem，无论css中还是JS中。</li>
-<li>上述提到的<code>所有的单位</code>并不准确，如果你需要解决移动端1px这个世纪难题，则可以直接写1px，而无需使用px2rem。并且，这个1px在所有设备中是真的1px。</li>
-<li>同时<code>hotcss</code>支持单项目多设计图（设计图尺寸不一样），只需要在你的css中定义设计图尺寸即可</li>
+<li><p><code>hotcss</code>不是一个库，也不是一个框架。它是一个移动端布局开发解决方案。使用<code>hotcss</code>可以让移动端布局开发更容易。</p></li>
+<li><p>使用动态的HTML根字体大小和动态的viewport scale。</p></li>
+<li><p>遵循视觉一致性原则。在不同大小的屏幕和不同的设备像素密度下，让你的页面看起来是一样的。</p></li>
+<li><p>不仅便捷了你的布局，同时它使用起来异常简单。可能你会说 <code>talk is cheap,show me the code</code>，那我现在列下hotcss整个项目的目录结构。</p></li>
 </ul>
 
-<h3>
-<a id="获取" class="anchor" href="#%E8%8E%B7%E5%8F%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>获取</h3>
-
-<p>可以使用<code>bower</code>或者<code>npm</code>来安装<code>hotcss</code>。</p>
-
-<pre><code>bower install hotcss --save
-npm install hotcss --save
+<pre><code>├── example   //所有的示例都在这个目录下
+│   └── index.html
+│
+└── src   //主要文件在这里
+    ├── hotcss.js
+    ├── px2rem.less
+    └── px2rem.scss
 </code></pre>
 
-<p>如果你不乐意使用这两种方法，也可以直接复制源码或者使用<code>git clone</code>等你喜欢的方式。</p>
-
 <h3>
-<a id="开始使用" class="anchor" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>开始使用</h3>
-
-<h4>
-<a id="hotcssjs" class="anchor" href="#hotcssjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss.js</h4>
-
-<p>引入<code>hotcss.js</code>，该JS必须在<code>&lt;body&gt;</code>前加载，如果能内嵌到HTML中，效果更好。当然这个JS是非常小的，只有区区几行，压缩后更是不值一提，建议使用内嵌方式直接写到<code>&lt;head&gt;</code>里面。</p>
-
-<div class="highlight highlight-text-html-basic"><pre><span class="pl-c">&lt;!-- /index.html--&gt;</span>
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>../bower_components/hotcss/dest/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
-
-<p>注意事项:</p>
+<a id="优势" class="anchor" href="#%E4%BC%98%E5%8A%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>优势</h3>
 
 <ul>
-<li>不能将此JS放到<code>&lt;body&gt;</code>后加载，或者异步加载。这样会导致加载完毕后页面一团乱，然后会有明显的视觉跳动，继而才会恢复正常。</li>
-</ul>
-
-<h4>
-<a id="hotcssss" class="anchor" href="#hotcssss" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss.**ss</h4>
-
-<p>根据你使用的css预编译语言，将<code>hotcss.less</code>/<code>hotcss.scss</code> import到你的less/scss文件中去，然后定义你的设计图宽度<code>designWidth</code>。</p>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/*  /src/scss/style.scss */</span>
-@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dest/hotcss.scss<span class="pl-pds">'</span></span>;
-$designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></div>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-c">/*  /src/less/style.less  */</span>
-@<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">'</span>../../bower_components/hotcss/dest/hotcss.less<span class="pl-pds">'</span></span>;
-@designWidth <span class="pl-k">:</span> <span class="pl-c1">750</span>;</pre></div>
-
-<p>注意事项:</p>
-
-<ul>
-<li>如果你的设计图都是同样的宽度，你可以去<code>hotcss.**ss</code>中直接定义全局<code>designWidth</code>。</li>
-<li>每个css预编译文件都需要导入<code>hotcss.**ss</code>,如果你没有全局的<code>designWidth</code>，还需要定义<code>designWidth</code>。</li>
-<li>在css预编译文件中使用<code>px2rem(375)</code>，尺寸是你在设计图上测量出来的px值，无需经过任何处理。直接交给<code>px2rem</code>即可。</li>
-<li>新版的hotcss已经不建议使用mixins了，因为编译工具里面有<code>autoprefixer</code>。如果你仍然需要mixins，以后的版本会更新上。</li>
+<li>保证不同设备下的统一视觉体验。</li>
+<li>不需要你再手动设置<code>viewport</code>，根据当前环境计算出最适合的<code>viewport</code>。</li>
+<li>支持任意尺寸的设计图，不再局限于[640,750,1125]。</li>
+<li>支持单一项目，多种设计图尺寸，专为解决大型，长周期项目。</li>
+<li>提供<code>px2rem</code>转换方法，CSS布局，零成本转换，原始值不丢失。</li>
+<li>有效解决移动端真实1像素问题。</li>
 </ul>
 
 <h3>
-<a id="如何编译" class="anchor" href="#%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91" aria-hidden="true"><span class="octicon octicon-link"></span></a>如何编译</h3>
+<a id="用法" class="anchor" href="#%E7%94%A8%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>用法</h3>
 
-<p>作为一个解决方案，怎么可能让你自己费心再找编译方法呢，没错，这些都已经为你准备好了，你需要做的就是按步骤配置一下即可。</p>
+<h4>
+<a id="引入hotcssjs" class="anchor" href="#%E5%BC%95%E5%85%A5hotcssjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>引入hotcss.js</h4>
 
-<p>建议开发目录，所有的开发都在src目录下进行，dev目录为开发目录，watch的时候访问此目录，release目录为发布目录</p>
-
-<pre><code>├── bower_components
-│   └── hotcss
-├── dev
-├── release
-├── src
-│   ├── css
-│   ├── img
-│   ├── index.html
-│   └── js
-└── tools
+<pre><code>&lt;script src="/path/to/hotcss.js"&gt;&lt;/script&gt;
 </code></pre>
 
-<h4>
-<a id="配置gulp" class="anchor" href="#%E9%85%8D%E7%BD%AEgulp" aria-hidden="true"><span class="octicon octicon-link"></span></a>配置gulp</h4>
-
-<p>进入项目根目录，使用<code>cp</code>命令将<code>tools</code>文件夹复制到根目录，注意命令最后空格后有一个点。</p>
-
-<div class="highlight highlight-source-shell"><pre>cp -R bower_components/hotcss/src/tools <span class="pl-c1">.</span>
-cp -R node_modules/hotcss/src/tools <span class="pl-c1">.</span></pre></div>
-
-<p>进入tools目录，执行<code>npm install</code>安装必需的package。</p>
-
-<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> tools/
-npm install</pre></div>
-
-<p>配置<code>tools/config.js</code>怎么配置在注释里面都已经写的很清楚了，如仍然遇到问题，可以与我取得联系。</p>
-
-<p>在<code>tools</code>目录下执行<code>gulp watch</code></p>
-
-<del>如果当前环境有浏览器，会自动打开`http://127.0.0.1:13097/dev/`</del>
-
-<p><code>1.0.4版本</code>中已经修改为自动打开<code>http://你的IP:13097/dev/</code>，方便同域下直接使用手机调试开发。</p>
-
-<p>享受开发的乐趣吧</p>
+<p><code>hotcss.js</code>必须尽可能早的加载，千万不要放到<code>&lt;body&gt;</code>标签后面或者异步加载它。
+如果可以，你应将<code>hotcss.js</code>的内容以内嵌的方式写到<code>&lt;head&gt;</code>标签里面进行加载，并且在别的js文件之前。</p>
 
 <h4>
-<a id="内置命令" class="anchor" href="#%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4" aria-hidden="true"><span class="octicon octicon-link"></span></a>内置命令</h4>
+<a id="css要怎么写" class="anchor" href="#css%E8%A6%81%E6%80%8E%E4%B9%88%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>css要怎么写</h4>
 
-<ul>
-<li>
-<code>gulp css</code>：仅编译css预编译文件。</li>
-<li>
-<code>gulp watch-css</code>：仅watch css预编译文件，不会自动刷新。</li>
-<li>
-<code>gulp watch</code>：watch所配置文件，自动起http服务，同时自带编译，liveload等功能。</li>
-<li>
-<code>gulp release</code>：发布命令，根据配置文件编译/压缩并生成，不处理html文件。</li>
-<li>
-<code>gulp release -html</code>：带上html命令，会把html一并压缩。</li>
-</ul>
+<p>你可能已经注意到在<code>src/</code>目录下有<code>px2rem.scss/px2rem.less</code>两个文件。没错，这就是<code>hotcss</code>提供的将px专为rem的方法。</p>
+
+<p>推荐使用scss来编写css，在scss文件的头部使用<code>import</code>将<code>px2rem</code>导入</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> '<span class="pl-v">/path/to/px2rem.scss</span>';</pre></div>
+
+<p>如果你的项目是单一尺寸设计图，那么你需要去px2rem.scss中定义全局的<code>designWidth</code>。</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@function</span> <span class="pl-c1">px2rem</span>( <span class="pl-smi">$px</span> ){
+    <span class="pl-k">@return</span> <span class="pl-smi">$px</span><span class="pl-c1">*</span><span class="pl-c1">320</span>/<span class="pl-smi">$designWidth</span><span class="pl-c1">/</span><span class="pl-c1">20</span> + rem;
+}
+<span class="pl-smi">$designWidth</span> : <span class="pl-c1">750</span>;<span class="pl-c"> //如设计图是750</span></pre></div>
+
+<p>如果你的项目是多尺寸设计图，那么就不能定义全局的<code>designWidth</code>了。需要在你的业务<code>scss</code>中单独定义。如以下是<code>style.scss</code></p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> '<span class="pl-v">/path/to/px2rem.scss</span>';
+<span class="pl-smi">$designWidth</span> : <span class="pl-c1">750</span>;<span class="pl-c"> //如设计图是750</span></pre></div>
+
+<p><code>$designWidth</code>必须要在使用<code>px2rem</code>前定义。否则scss编译会出错。</p>
+
+<p>注意：如果使用less，则需要引入<code>less-plugin-functions</code>，普通的less编译工具无法正常编译。</p>
 
 <h3>
-<a id="更新日志" class="anchor" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97" aria-hidden="true"><span class="octicon octicon-link"></span></a>更新日志</h3>
+<a id="接口说明" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>接口说明</h3>
 
-<p><code>1.0.5</code> gulp新增自动复制图片到dev目录，release目录。暂未实现压缩。</p>
+<ul>
+<li>强制设置DPR为1</li>
+</ul>
 
-<p><code>1.0.4</code> 修改<code>gulp watch</code>时打开的地址为<code>http://你的IP:13097/dev/</code>。方便同域下直接使用手机调试开发。</p>
+<pre><code>&lt;meta name="hotcss" content="initial-dpr=1"&gt;
+&lt;script src="/path/to/hotcss.js"&gt;&lt;/script&gt;
+</code></pre>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/imochen/hotcss">hotcss</a> is maintained by <a href="https://github.com/imochen">imochen</a>.</span>
+<ul>
+<li>方法</li>
+</ul>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//重新计算布局，一般不需要你手动调用。</span>
+<span class="pl-smi">hotcss</span>.<span class="pl-en">mresize</span>();
 
-    </section>
+<span class="pl-c">//将px转换为rem。</span>
+<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>( px , designWidth );
 
-  
+<span class="pl-c">//你可以预先定义hotcss.designWidth，此后使用px2rem，就不需要传递designWidth值了</span>
+<span class="pl-smi">hotcss</span>.<span class="pl-smi">designWidth</span> <span class="pl-k">=</span> <span class="pl-c1">750</span>;
+<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">200</span>);
+<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">350</span>);</pre></div>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/imochen">imochen</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
