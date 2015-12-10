@@ -11,15 +11,24 @@
 
 - 不仅便捷了你的布局，同时它使用起来异常简单。可能你会说 `talk is cheap,show me the code`，那我现在列下hotcss整个项目的目录结构。
 
-```
+```javascript
 ├── example	//所有的示例都在这个目录下
-│   └── index.html
+│   ├── duang/
+│   ├── normal/
+│   └── wolf/
 │
 └── src	//主要文件在这里
     ├── hotcss.js
     ├── px2rem.less
     └── px2rem.scss
 ```
+
+| 示例名称      |     演示地址 |  贡献者 |
+| :-------- |:-------- | :--------: | 
+| 普通的演示    |   http://imochen.github.io/hotcss/example/normal/ | 墨尘 | 
+| duang游戏    |   http://imochen.github.io/hotcss/example/duang/ | [阳阳](https://github.com/iwuly)|
+| 灰太狼    |   http://imochen.github.io/hotcss/example/wolf/ | [阳阳](https://github.com/iwuly) |
+
 
 ### 优势
 
@@ -71,10 +80,14 @@ $designWidth : 750; //如设计图是750
 
 ### 接口说明
 
-- 强制设置DPR为1
+- 强制设置dpr
 ```
 <meta name="hotcss" content="initial-dpr=1">
 <script src="/path/to/hotcss.js"></script>
+<!--
+如iphone微信强设dpr=1，则可以长按识别二维码。
+注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。
+-->
 ```
 - 方法
 ```javascript
