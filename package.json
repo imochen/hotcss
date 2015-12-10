@@ -1,0 +1,30 @@
+{
+  "name": "hotcss",
+  "version": "2.0.0",
+  "description": "Make Mobile Development Layout More Easy.",
+  "main": "hotcss.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imochen/hotcss.git"
+  },
+  "keywords": [
+    "rem",
+    "css3",
+    "mobile",
+    "layout",
+    "resize",
+    "scss",
+    "less",
+    "hotcss",
+    "mochen"
+  ],
+  "author": "mochen <imochen@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imochen/hotcss/issues"
+  },
+  "homepage": "https://github.com/imochen/hotcss"
+}

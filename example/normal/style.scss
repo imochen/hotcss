@@ -1,0 +1,28 @@
+@import 'px2rem'; //第一步先把px2rem导入
+
+$designWidth : 640; //写scss之前，必须要先定义designWidth。
+
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	width: px2rem(640);
+	height: px2rem(88);
+	line-height: px2rem(88);
+	background-color: #33aa33;
+	text-align: center;
+	font-size: px2rem(48);
+	color: rgba(255,255,255,1);
+}
+#container{
+	margin-top: px2rem(10);
+	padding: px2rem(30);
+	background-color: #191919;
+	color: #f0f0f0;
+	font-size: px2rem(32);
+	line-height: 1.7;
+	max-height: 100%;
+}

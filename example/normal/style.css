@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#header {
+  width: 16rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  background-color: #33aa33;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white; }
+
+#container {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  background-color: #191919;
+  color: #f0f0f0;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  max-height: 100%; }
