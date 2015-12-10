@@ -8,7 +8,6 @@
   "license": "MIT",
   "ignore": [
     "dev_tools",
-    "src",
     "example",
     "package.json",
     ".gitignore",
