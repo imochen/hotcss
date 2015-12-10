@@ -1,33 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>hotcss by imochen</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>hotcss</h1>
-        <p>移动端布局解决方案 --- 简洁而不简单</p>
-        <p class="view"><a href="https://github.com/imochen/hotcss">View the Project on GitHub <small>imochen/hotcss</small></a></p>
-        <ul>
-          <li><a href="https://github.com/imochen/hotcss/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/imochen/hotcss/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/imochen/hotcss">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="page-header">
+      <h1 class="project-name">hotcss</h1>
+      <h2 class="project-tagline">移动端布局终极解决方案</h2>
+      <a href="https://github.com/imochen/hotcss" class="btn">View on GitHub</a>
+      <a href="https://github.com/imochen/hotcss/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/imochen/hotcss/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
 <a id="hotcss" class="anchor" href="#hotcss" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss</h1>
 
 <blockquote>
@@ -44,14 +36,42 @@
 <li><p>不仅便捷了你的布局，同时它使用起来异常简单。可能你会说 <code>talk is cheap,show me the code</code>，那我现在列下hotcss整个项目的目录结构。</p></li>
 </ul>
 
-<pre><code>├── example   //所有的示例都在这个目录下
-│   └── index.html
+<div class="highlight highlight-source-js"><pre>├── example   <span class="pl-c">//所有的示例都在这个目录下</span>
+│   ├── duang<span class="pl-k">/</span>
+│   ├── normal<span class="pl-k">/</span>
+│   └── wolf<span class="pl-k">/</span>
 │
-└── src   //主要文件在这里
-    ├── hotcss.js
-    ├── px2rem.less
-    └── px2rem.scss
-</code></pre>
+└── src   <span class="pl-c">//主要文件在这里</span>
+    ├── <span class="pl-smi">hotcss</span>.<span class="pl-smi">js</span>
+    ├── <span class="pl-smi">px2rem</span>.<span class="pl-smi">less</span>
+    └── <span class="pl-smi">px2rem</span>.<span class="pl-smi">scss</span></pre></div>
+
+<table>
+<thead>
+<tr>
+<th align="left">示例名称</th>
+<th align="left">演示地址</th>
+<th align="center">贡献者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">普通的演示</td>
+<td align="left"><a href="http://imochen.github.io/hotcss/example/normal/">http://imochen.github.io/hotcss/example/normal/</a></td>
+<td align="center">墨尘</td>
+</tr>
+<tr>
+<td align="left">duang游戏</td>
+<td align="left"><a href="http://imochen.github.io/hotcss/example/duang/">http://imochen.github.io/hotcss/example/duang/</a></td>
+<td align="center"><a href="https://github.com/iwuly">阳阳</a></td>
+</tr>
+<tr>
+<td align="left">灰太狼</td>
+<td align="left"><a href="http://imochen.github.io/hotcss/example/wolf/">http://imochen.github.io/hotcss/example/wolf/</a></td>
+<td align="center"><a href="https://github.com/iwuly">阳阳</a></td>
+</tr>
+</tbody>
+</table>
 
 <h3>
 <a id="优势" class="anchor" href="#%E4%BC%98%E5%8A%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>优势</h3>
@@ -106,11 +126,15 @@
 <a id="接口说明" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>接口说明</h3>
 
 <ul>
-<li>强制设置DPR为1</li>
+<li>强制设置dpr</li>
 </ul>
 
 <pre><code>&lt;meta name="hotcss" content="initial-dpr=1"&gt;
 &lt;script src="/path/to/hotcss.js"&gt;&lt;/script&gt;
+&lt;!--
+如iphone微信强设dpr=1，则可以长按识别二维码。
+注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。
+--&gt;
 </code></pre>
 
 <ul>
@@ -127,13 +151,15 @@
 <span class="pl-smi">hotcss</span>.<span class="pl-smi">designWidth</span> <span class="pl-k">=</span> <span class="pl-c1">750</span>;
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">200</span>);
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">350</span>);</pre></div>
-      </section>
-    </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/imochen">imochen</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/imochen/hotcss">hotcss</a> is maintained by <a href="https://github.com/imochen">imochen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
