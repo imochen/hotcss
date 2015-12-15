@@ -38,6 +38,7 @@
 - [一起作业](http://17zuoye.com/)
 - [TalkingData](http://www.talkingdata.com/)
 - [电兔金服](http://www.diantujinfu.com/)
+- [新浪show](http://show.sina.com.cn/)
 
 ### 优势
 
