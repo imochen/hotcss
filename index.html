@@ -134,12 +134,29 @@
 
 <p>注意：如果使用less，则需要引入<code>less-plugin-functions</code>，普通的less编译工具无法正常编译。</p>
 
+<h4>
+<a id="想用px怎么办" class="anchor" href="#%E6%83%B3%E7%94%A8px%E6%80%8E%E4%B9%88%E5%8A%9E" aria-hidden="true"><span class="octicon octicon-link"></span></a>想用px怎么办？</h4>
+
+<p>直接写px肯定是不能适配的，那<code>hotcss.js</code>会在html上注册<code>data-dpr</code>属性，这个属性用来标识当前环境dpr值。那么要使用px可以这么写。</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-c">//scss写法</span>
+<span class="pl-e">#container</span>{
+    <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">12</span><span class="pl-k">px</span> ;
+    [<span class="pl-c1"><span class="pl-ii">data-dpr</span></span>="2"] <span class="pl-ent">&amp;</span>{
+        <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">24</span><span class="pl-k">px</span>;
+    }
+    [<span class="pl-c1"><span class="pl-ii">data-dpr</span></span>="3"] <span class="pl-ent">&amp;</span>{
+        <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">36</span><span class="pl-k">px</span>;
+    }
+}</pre></div>
+
 <h3>
 <a id="接口说明" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>接口说明</h3>
 
-<ul>
-<li>强制设置dpr</li>
-</ul>
+<h4>
+<a id="initial-dpr" class="anchor" href="#initial-dpr" aria-hidden="true"><span class="octicon octicon-link"></span></a>initial-dpr</h4>
+
+<p>可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为1。</p>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">meta</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>hotcss<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>initial-dpr=1<span class="pl-pds">"</span></span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
@@ -148,17 +165,34 @@
 <span class="pl-c">注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。</span>
 <span class="pl-c">--&gt;</span></pre></div>
 
-<ul>
-<li>方法</li>
-</ul>
+<h4>
+<a id="hotcssmresize" class="anchor" href="#hotcssmresize" aria-hidden="true"><span class="octicon octicon-link"></span></a>hotcss.mresize</h4>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-c">//重新计算布局，一般不需要你手动调用。</span>
-<span class="pl-smi">hotcss</span>.<span class="pl-en">mresize</span>();
+<p>用于重新计算布局，一般不需要你手动调用。</p>
 
-<span class="pl-c">//将px转换为rem。</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">hotcss</span>.<span class="pl-en">mresize</span>();</pre></div>
+
+<h4>
+<a id="单位转换hotcsspx2remhotcssrem2px" class="anchor" href="#%E5%8D%95%E4%BD%8D%E8%BD%AC%E6%8D%A2hotcsspx2remhotcssrem2px" aria-hidden="true"><span class="octicon octicon-link"></span></a>单位转换hotcss.px2rem/hotcss.rem2px</h4>
+
+<p><code>hotcss.px2rem</code> 和 <code>hotcss.rem2px</code>。你可以预先设定<code>hotcss.designWidth</code>，则之后使用这两个方法不需要再传递第二个参数。</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">/**</span>
+<span class="pl-c">* [px2rem px值转换为rem值]</span>
+<span class="pl-c">* <span class="pl-k">@param</span>  {[number]} px          [需要转换的值]</span>
+<span class="pl-c">* <span class="pl-k">@param</span>  {[number]} designWidth [设计图的宽度尺寸]</span>
+<span class="pl-c">* <span class="pl-k">@return</span> {[number]}             [返回转换后的结果]</span>
+<span class="pl-c">*/</span>
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>( px , designWidth );
 
-<span class="pl-c">//你可以预先定义hotcss.designWidth，此后使用px2rem，就不需要传递designWidth值了</span>
+<span class="pl-c">/**</span>
+<span class="pl-c">* 同上。</span>
+<span class="pl-c">* 注意：因为rem可能为小数，转换后的px值有可能不是整数，需要自己手动处理。</span>
+<span class="pl-c">*/</span>
+<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>( rem , designWidth );
+
+
+<span class="pl-c">//你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了</span>
 <span class="pl-smi">hotcss</span>.<span class="pl-smi">designWidth</span> <span class="pl-k">=</span> <span class="pl-c1">750</span>;
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">200</span>);
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">350</span>);</pre></div>
