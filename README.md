@@ -136,7 +136,7 @@ hotcss.px2rem( px , designWidth );
 * 同上。
 * 注意：因为rem可能为小数，转换后的px值有可能不是整数，需要自己手动处理。
 */
-hotcss.px2rem( rem , designWidth );
+hotcss.rem2px( rem , designWidth );
 
 
 //你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了
