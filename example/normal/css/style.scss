@@ -17,12 +17,29 @@ body{
 	font-size: px2rem(48);
 	color: rgba(255,255,255,1);
 }
-#container{
+
+#container1{
 	margin-top: px2rem(10);
 	padding: px2rem(30);
 	background-color: #191919;
 	color: #f0f0f0;
-	font-size: px2rem(32);
 	line-height: 1.7;
 	max-height: 100%;
+	font-size: px2rem(32);
+}
+
+#container2{
+	margin-top: px2rem(10);
+	padding: px2rem(30);
+	background-color: #191919;
+	color: #f0f0f0;
+	line-height: 1.7;
+	max-height: 100%;
+	font-size: 12px ;
+	[data-dpr="2"] &{
+		font-size: 24px;
+	}
+	[data-dpr="3"] &{
+		font-size: 36px;
+	}
 }

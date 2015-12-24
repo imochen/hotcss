@@ -20,6 +20,8 @@
 			}
 		}
 
+		document.documentElement.setAttribute('data-dpr', dpr);
+
 		var	scale = 1 / dpr,
 			content = 'width=device-width, initial-scale='+ scale +', minimum-scale='+ scale +', maximum-scale='+ scale +', user-scalable=no';
 
@@ -48,6 +50,15 @@
 		return parseInt(px,10)*320/designWidth/20;
 	}
 
+	hotcss.rem2px = function( rem , designWidth ){
+		//新增一个rem2px的方法。用法和px2rem一致。
+		if( !designWidth ){
+			designWidth = parseInt(hotcss.designWidth , 10);
+		}
+		//rem可能为小数，这里不再做处理了
+		return rem*20*designWidth/320;
+	}
+
 	hotcss.mresize = function(){
 		//对，这个就是核心方法了，给HTML设置font-size，三行足矣。
 		var innerWidth = window.innerWidth;
@@ -61,7 +72,10 @@
 	hotcss.mresize(); 
 	//直接调用一次
 
-	window.addEventListener( 'resize' , hotcss.mresize , false ); 
+	window.addEventListener( 'resize' , function(){
+		clearTimeout( hotcss.tid );
+		hotcss.tid = setTimeout( hotcss.mresize , 33 );
+	} , false ); 
 	//绑定resize的时候调用
 
 	window.addEventListener( 'load' , hotcss.mresize , false ); 
@@ -71,7 +85,7 @@
 	setTimeout(function(){
 		hotcss.mresize(); 
 		//防止某些机型怪异现象，异步再调用一次
-	},300)
+	},333)
 
 	window.hotcss = hotcss; 
 	//命名空间暴露给你，控制权交给你，想怎么调怎么调。
