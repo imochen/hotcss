@@ -1,3 +1,4 @@
+
 # hotcss
 > 让移动端布局开发更加容易
 
@@ -38,6 +39,7 @@
 - [一起作业](http://17zuoye.com/)
 - [TalkingData](http://www.talkingdata.com/)
 - [电兔金服](http://www.diantujinfu.com/)
+- [新浪show](http://show.sina.com.cn/)
 
 ### 优势
 
@@ -86,10 +88,26 @@ $designWidth : 750; //如设计图是750
 
 注意：如果使用less，则需要引入`less-plugin-functions`，普通的less编译工具无法正常编译。
 
+#### 想用px怎么办？
+直接写px肯定是不能适配的，那`hotcss.js`会在html上注册`data-dpr`属性，这个属性用来标识当前环境dpr值。那么要使用px可以这么写。
+```scss
+//scss写法
+#container{
+	font-size: 12px ;
+	[data-dpr="2"] &{
+		font-size: 24px;
+	}
+	[data-dpr="3"] &{
+		font-size: 36px;
+	}
+}
+```
 
 ### 接口说明
 
-- 强制设置dpr
+#### initial-dpr
+可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为1。
+
 ```html
 <meta name="hotcss" content="initial-dpr=1">
 <script src="/path/to/hotcss.js"></script>
@@ -98,15 +116,31 @@ $designWidth : 750; //如设计图是750
 注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。
 -->
 ```
-- 方法
+#### hotcss.mresize
+用于重新计算布局，一般不需要你手动调用。
 ```javascript
-//重新计算布局，一般不需要你手动调用。
 hotcss.mresize();
+```
+#### 单位转换hotcss.px2rem/hotcss.rem2px
+`hotcss.px2rem` 和 `hotcss.rem2px`。你可以预先设定`hotcss.designWidth`，则之后使用这两个方法不需要再传递第二个参数。
 
-//将px转换为rem。
+```javascript
+/**
+* [px2rem px值转换为rem值]
+* @param  {[number]} px          [需要转换的值]
+* @param  {[number]} designWidth [设计图的宽度尺寸]
+* @return {[number]}             [返回转换后的结果]
+*/
 hotcss.px2rem( px , designWidth );
 
-//你可以预先定义hotcss.designWidth，此后使用px2rem，就不需要传递designWidth值了
+/**
+* 同上。
+* 注意：因为rem可能为小数，转换后的px值有可能不是整数，需要自己手动处理。
+*/
+hotcss.px2rem( rem , designWidth );
+
+
+//你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了
 hotcss.designWidth = 750;
 hotcss.px2rem(200);
 hotcss.px2rem(350);
