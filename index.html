@@ -82,7 +82,7 @@
 <li><a href="http://www.baomitu.com/">爆米兔</a></li>
 <li><a href="http://17zuoye.com/">一起作业</a></li>
 <li><a href="http://www.talkingdata.com/">TalkingData</a></li>
-<li><a href="http://www.diantujinfu.com/">电兔金服</a></li>
+<li><a href="http://www.diantu.tv/?from=hotcss">电兔TV</a></li>
 <li><a href="http://show.sina.com.cn/">新浪show</a></li>
 </ul>
 
@@ -106,8 +106,11 @@
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
-<p><code>hotcss.js</code>必须尽可能早的加载，千万不要放到<code>&lt;body&gt;</code>标签后面或者异步加载它。
-如果可以，你应将<code>hotcss.js</code>的内容以内嵌的方式写到<code>&lt;head&gt;</code>标签里面进行加载，并且在别的js文件之前。</p>
+<del>`hotcss.js`必须尽可能早的加载，千万不要放到`body`标签后面或者异步加载它。</del>
+
+<p>根据页面渲染机制，<code>hotcss.js</code>必须在其他JS加载前加载，万不可异步加载。</p>
+
+<p>如果可以，你应将<code>hotcss.js</code>的内容以内嵌的方式写到<code>&lt;head&gt;</code>标签里面进行加载，并且保证在其他js文件之前。</p>
 
 <h4>
 <a id="css要怎么写" class="anchor" href="#css%E8%A6%81%E6%80%8E%E4%B9%88%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>css要怎么写</h4>
@@ -189,13 +192,23 @@
 <span class="pl-c">* 同上。</span>
 <span class="pl-c">* 注意：因为rem可能为小数，转换后的px值有可能不是整数，需要自己手动处理。</span>
 <span class="pl-c">*/</span>
-<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>( rem , designWidth );
+<span class="pl-smi">hotcss</span>.<span class="pl-en">rem2px</span>( rem , designWidth );
 
 
 <span class="pl-c">//你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了</span>
 <span class="pl-smi">hotcss</span>.<span class="pl-smi">designWidth</span> <span class="pl-k">=</span> <span class="pl-c1">750</span>;
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">200</span>);
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">350</span>);</pre></div>
+
+<h3>
+<a id="辅助开发资源" class="anchor" href="#%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>辅助开发资源</h3>
+
+<ul>
+<li>
+<a href="https://github.com/imochen/hotcss/issues/7">hotcss Sulime text 代码片段</a> -- 感谢<a href="https://github.com/dctxf">dctxf</a>提供</li>
+<li><a href="http://koala-app.com/index-zh.html">koala&lt;中文，免费&gt;</a></li>
+<li><a href="http://incident57.com/codekit/">codekit&lt;功能丰富，收费&gt;</a></li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/imochen/hotcss">hotcss</a> is maintained by <a href="https://github.com/imochen">imochen</a>.</span>
