@@ -1,6 +1,11 @@
 @import 'px2rem.scss';
 $designWidth: 750;
 
+body{
+  width: 16rem;
+  margin: 0 auto;
+}
+
 #bigBigWolf {
   position: absolute;
   top: 50%;

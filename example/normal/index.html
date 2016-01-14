@@ -4,9 +4,7 @@
 	<meta charset="UTF-8">
 	<title>这是一个最最普通的演示</title>
 	<link rel="stylesheet" href="./css/style.css">
-	<script>
-		(function(window,document){(function(){var viewportEl=document.querySelector('meta[name="viewport"]'),hotcssEl=document.querySelector('meta[name="hotcss"]'),dpr=window.devicePixelRatio||1;if(hotcssEl){var hotcssCon=hotcssEl.getAttribute("content");if(hotcssCon){var initialDpr=hotcssCon.match(/initial\-dpr=([\d\.]+)/);if(initialDpr){dpr=parseFloat(initialDpr[1])}}}document.documentElement.setAttribute("data-dpr",dpr);var scale=1/dpr,content="width=device-width, initial-scale="+scale+", minimum-scale="+scale+", maximum-scale="+scale+", user-scalable=no";if(viewportEl){viewportEl.setAttribute("content",content)}else{viewportEl=document.createElement("meta");viewportEl.setAttribute("name","viewport");viewportEl.setAttribute("content",content);document.head.appendChild(viewportEl)}})();var hotcss={};hotcss.px2rem=function(px,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return parseInt(px,10)*320/designWidth/20};hotcss.rem2px=function(rem,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return rem*20*designWidth/320};hotcss.mresize=function(){var innerWidth=window.innerWidth;if(!innerWidth){return false}document.documentElement.style.fontSize=(innerWidth*20/320)+"px"};hotcss.mresize();window.addEventListener("resize",function(){clearTimeout(hotcss.tid);hotcss.tid=setTimeout(hotcss.mresize,33)},false);window.addEventListener("load",hotcss.mresize,false);setTimeout(function(){hotcss.mresize()},333);window.hotcss=hotcss})(window,document);
-	</script>
+	<script src="../hotcss.js"></script>
 </head>
 <body>
 	<div id="header">普通的演示</div>

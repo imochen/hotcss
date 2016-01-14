@@ -4,3 +4,6 @@ npm-debug.log
 .sass-cache
 config.codekit
 .DS_Store
+src/
+README.md
+package.json
