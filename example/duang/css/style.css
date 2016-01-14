@@ -1,17 +1,12 @@
-html,
 body {
-  width: 100%;
-}
-
-body {
-  position: relative;
   width: 16rem;
+  margin: 0 auto;
   background: #f3ecd1 url(../img/body-bg11.jpg) repeat;
   background-size: cover;
 }
 
 .container {
-  width: 16rem;
+  width: 100%;
 }
 
 .container .person {

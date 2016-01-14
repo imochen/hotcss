@@ -1,18 +1,14 @@
 @import 'px2rem.scss';
 $designWidth: 750;
-
-html,
-body {
-  width: 100%;
-}
 body {
   position: relative;
   width: px2rem(750);
+  margin: 0 auto;
   background: #f3ecd1 url(../img/body-bg11.jpg) repeat;
   background-size: cover;
 }
 .container {
-  width: px2rem(750);
+  width: 100%;
 }
 .container .person {
   overflow: hidden;

@@ -44,7 +44,7 @@
 
 - 保证不同设备下的统一视觉体验。
 - 不需要你再手动设置`viewport`，根据当前环境计算出最适合的`viewport`。
-- 支持任意尺寸的设计图，不再局限于[640,750,1125]。
+- 支持任意尺寸的设计图，不局限于特定尺寸的设计图。
 - 支持单一项目，多种设计图尺寸，专为解决大型，长周期项目。
 - 提供`px2rem`转换方法，CSS布局，零成本转换，原始值不丢失。
 - 有效解决移动端真实1像素问题。
@@ -61,6 +61,8 @@
 根据页面渲染机制，`hotcss.js`必须在其他JS加载前加载，万不可异步加载。
 
 如果可以，你应将`hotcss.js`的内容以内嵌的方式写到`<head>`标签里面进行加载，并且保证在其他js文件之前。
+
+为了避免不必要的bug，请将CSS放到该JS之前加载。
 
 #### css要怎么写
 
@@ -107,7 +109,7 @@ $designWidth : 750; //如设计图是750
 ### 接口说明
 
 #### initial-dpr
-可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为1。
+可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为固定值。
 
 ```html
 <meta name="hotcss" content="initial-dpr=1">
@@ -117,13 +119,44 @@ $designWidth : 750; //如设计图是750
 注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。
 -->
 ```
+
+#### max-width
+通过设置该值来优化平板/PC访问体验，注意该值默认值为540。设置为0则该功能关闭。
+为了配合使用该设置，请给body增加样式`width:16rem;margin:0 auto;`。
+```html
+<meta name="hotcss" content="max-width=640">
+<script src="/path/to/hotcss.js"></script>
+<!--
+默认为540，可根据具体需求自己定义
+-->
+<style>
+body{
+	width: 16rem;
+	margin: 0 auto;
+}
+</style>
+```
+
+#### design-width
+通过对design-width的设置可以在本页运行的JS中直接使用`hotcss.px2rem/hotcss.rem2px`方法，无需再传递第二个值。
+
+```html
+<meta name="hotcss" content="design-width=750">
+<script src="/path/to/hotcss.js"></script>
+<!--
+默认为540，可根据具体需求自己定义
+-->
+```
+
 #### hotcss.mresize
 用于重新计算布局，一般不需要你手动调用。
 ```javascript
 hotcss.mresize();
 ```
 #### 单位转换hotcss.px2rem/hotcss.rem2px
-`hotcss.px2rem` 和 `hotcss.rem2px`。你可以预先设定`hotcss.designWidth`，则之后使用这两个方法不需要再传递第二个参数。
+`hotcss.px2rem` 和 `hotcss.rem2px`。<del>你可以预先设定`hotcss.designWidth`</del>可以在meta中设置`design-width`，则之后使用这两个方法不需要再传递第二个参数。
+
+迭代后仍然支持在js中设置`hotcss.designWidth`，推荐使用meta去设置。
 
 ```javascript
 /**
@@ -141,10 +174,9 @@ hotcss.px2rem( px , designWidth );
 hotcss.rem2px( rem , designWidth );
 
 
-//你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了
-hotcss.designWidth = 750;
+//你可以在meta中定义design-width，此后使用px2rem/rem2px，就不需要传递designWidth值了。同时也支持旧的设置方式，直接在JS中设置hotcss.designWidth
 hotcss.px2rem(200);
-hotcss.px2rem(350);
+hotcss.rem2px(350);
 ```
 
 ### 辅助开发资源

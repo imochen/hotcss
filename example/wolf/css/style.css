@@ -1,3 +1,7 @@
+body{
+  width: 16rem;
+  margin: 0 auto;
+}
 #bigBigWolf {
   position: absolute;
   top: 50%;

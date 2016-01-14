@@ -4,7 +4,8 @@ $designWidth : 640; //写scss之前，必须要先定义designWidth。
 
 
 body{
-	margin: 0;
+	width: 16rem;
+	margin: 0 auto;
 	padding: 0;
 }
 
