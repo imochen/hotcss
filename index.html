@@ -92,7 +92,7 @@
 <ul>
 <li>保证不同设备下的统一视觉体验。</li>
 <li>不需要你再手动设置<code>viewport</code>，根据当前环境计算出最适合的<code>viewport</code>。</li>
-<li>支持任意尺寸的设计图，不再局限于[640,750,1125]。</li>
+<li>支持任意尺寸的设计图，不局限于特定尺寸的设计图。</li>
 <li>支持单一项目，多种设计图尺寸，专为解决大型，长周期项目。</li>
 <li>提供<code>px2rem</code>转换方法，CSS布局，零成本转换，原始值不丢失。</li>
 <li>有效解决移动端真实1像素问题。</li>
@@ -111,6 +111,8 @@
 <p>根据页面渲染机制，<code>hotcss.js</code>必须在其他JS加载前加载，万不可异步加载。</p>
 
 <p>如果可以，你应将<code>hotcss.js</code>的内容以内嵌的方式写到<code>&lt;head&gt;</code>标签里面进行加载，并且保证在其他js文件之前。</p>
+
+<p>为了避免不必要的bug，请将CSS放到该JS之前加载。</p>
 
 <h4>
 <a id="css要怎么写" class="anchor" href="#css%E8%A6%81%E6%80%8E%E4%B9%88%E5%86%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>css要怎么写</h4>
@@ -159,13 +161,42 @@
 <h4>
 <a id="initial-dpr" class="anchor" href="#initial-dpr" aria-hidden="true"><span class="octicon octicon-link"></span></a>initial-dpr</h4>
 
-<p>可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为1。</p>
+<p>可以通过强制设置dpr。来关闭响应的viewport scale。使得viewport scale始终为固定值。</p>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">meta</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>hotcss<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>initial-dpr=1<span class="pl-pds">"</span></span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 <span class="pl-c">&lt;!--</span>
 <span class="pl-c">如iphone微信强设dpr=1，则可以长按识别二维码。</span>
 <span class="pl-c">注意，强制设置dpr=1后，css中的1px在2x，3x屏上则不再是真实的1px。</span>
+<span class="pl-c">--&gt;</span></pre></div>
+
+<h4>
+<a id="max-width" class="anchor" href="#max-width" aria-hidden="true"><span class="octicon octicon-link"></span></a>max-width</h4>
+
+<p>通过设置该值来优化平板/PC访问体验，注意该值默认值为540。设置为0则该功能关闭。
+为了配合使用该设置，请给body增加样式<code>width:16rem;margin:0 auto;</code>。</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">meta</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>hotcss<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>max-width=640<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!--</span>
+<span class="pl-c">默认为540，可根据具体需求自己定义</span>
+<span class="pl-c">--&gt;</span>
+<span class="pl-s1">&lt;<span class="pl-ent">style</span>&gt;</span>
+<span class="pl-s1"><span class="pl-ent">body</span>{</span>
+<span class="pl-s1">    <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">16<span class="pl-k">rem</span></span>;</span>
+<span class="pl-s1">    <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">auto</span>;</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">style</span>&gt;</span></pre></div>
+
+<h4>
+<a id="design-width" class="anchor" href="#design-width" aria-hidden="true"><span class="octicon octicon-link"></span></a>design-width</h4>
+
+<p>通过对design-width的设置可以在本页运行的JS中直接使用<code>hotcss.px2rem/hotcss.rem2px</code>方法，无需再传递第二个值。</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">meta</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>hotcss<span class="pl-pds">"</span></span> <span class="pl-e">content</span>=<span class="pl-s"><span class="pl-pds">"</span>design-width=750<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/hotcss.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-c">&lt;!--</span>
+<span class="pl-c">默认为540，可根据具体需求自己定义</span>
 <span class="pl-c">--&gt;</span></pre></div>
 
 <h4>
@@ -178,7 +209,9 @@
 <h4>
 <a id="单位转换hotcsspx2remhotcssrem2px" class="anchor" href="#%E5%8D%95%E4%BD%8D%E8%BD%AC%E6%8D%A2hotcsspx2remhotcssrem2px" aria-hidden="true"><span class="octicon octicon-link"></span></a>单位转换hotcss.px2rem/hotcss.rem2px</h4>
 
-<p><code>hotcss.px2rem</code> 和 <code>hotcss.rem2px</code>。你可以预先设定<code>hotcss.designWidth</code>，则之后使用这两个方法不需要再传递第二个参数。</p>
+<p><code>hotcss.px2rem</code> 和 <code>hotcss.rem2px</code>。<del>你可以预先设定<code>hotcss.designWidth</code></del>可以在meta中设置<code>design-width</code>，则之后使用这两个方法不需要再传递第二个参数。</p>
+
+<p>迭代后仍然支持在js中设置<code>hotcss.designWidth</code>，推荐使用meta去设置。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">/**</span>
 <span class="pl-c">* [px2rem px值转换为rem值]</span>
@@ -195,10 +228,9 @@
 <span class="pl-smi">hotcss</span>.<span class="pl-en">rem2px</span>( rem , designWidth );
 
 
-<span class="pl-c">//你可以预先定义hotcss.designWidth，此后使用px2rem/rem2px，就不需要传递designWidth值了</span>
-<span class="pl-smi">hotcss</span>.<span class="pl-smi">designWidth</span> <span class="pl-k">=</span> <span class="pl-c1">750</span>;
+<span class="pl-c">//你可以在meta中定义design-width，此后使用px2rem/rem2px，就不需要传递designWidth值了。同时也支持旧的设置方式，直接在JS中设置hotcss.designWidth</span>
 <span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">200</span>);
-<span class="pl-smi">hotcss</span>.<span class="pl-en">px2rem</span>(<span class="pl-c1">350</span>);</pre></div>
+<span class="pl-smi">hotcss</span>.<span class="pl-en">rem2px</span>(<span class="pl-c1">350</span>);</pre></div>
 
 <h3>
 <a id="辅助开发资源" class="anchor" href="#%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>辅助开发资源</h3>
