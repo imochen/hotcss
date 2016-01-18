@@ -144,9 +144,6 @@ body{
 ```html
 <meta name="hotcss" content="design-width=750">
 <script src="/path/to/hotcss.js"></script>
-<!--
-默认为540，可根据具体需求自己定义
--->
 ```
 
 #### hotcss.mresize
