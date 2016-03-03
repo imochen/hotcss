@@ -151,6 +151,15 @@ body{
 ```javascript
 hotcss.mresize();
 ```
+#### hotcss.callback
+触发mresize的时候会执行该方法。
+```javascript
+hotcss.callback = function(){
+  //your code here
+}
+```
+
+
 #### 单位转换hotcss.px2rem/hotcss.rem2px
 `hotcss.px2rem` 和 `hotcss.rem2px`。<del>你可以预先设定`hotcss.designWidth`</del>可以在meta中设置`design-width`，则之后使用这两个方法不需要再传递第二个参数。
 
