@@ -14,6 +14,8 @@
             maxWidth = 540,
             designWidth = 0;
 
+        dpr = dpr >= 3 ? 3 : ( dpr >=2 ? 2 : 1 );
+
         //允许通过自定义name为hotcss的meta头，通过initial-dpr来强制定义页面缩放
         if (hotcssEl) {
             var hotcssCon = hotcssEl.getAttribute('content');
@@ -89,6 +91,8 @@
 		if( !innerWidth ){ return false;}
 
 		document.documentElement.style.fontSize = ( innerWidth*20/320 ) + 'px';
+
+        hotcss.callback && hotcss.callback();
 
 	};
 
