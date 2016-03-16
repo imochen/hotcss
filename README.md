@@ -32,6 +32,7 @@
 
 ### 谁在用hotcss
 
+- [熊猫TV](http://www.panda.tv/?from=hotcss)
 - [美丽说HIGO](http://higo.meilishuo.com/)
 - [奇虎360](http://www.360.com/)
 - [爆米兔](http://www.baomitu.com/)
