@@ -1,8 +1,8 @@
 {
   "name": "hotcss",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "description": "Make Mobile Development Layout More Easy.",
-  "main": "hotcss.js",
+  "main": "src/hotcss.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
