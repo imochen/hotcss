@@ -20,7 +20,8 @@
 └── src	//主要文件在这里
     ├── hotcss.js
     ├── px2rem.less
-    └── px2rem.scss
+    ├── px2rem.scss
+    └── px2rem.styl
 ```
 
 | 示例名称      |     演示地址 |  贡献者 |
@@ -58,7 +59,6 @@
 <script src="/path/to/hotcss.js"></script>
 ``` 
 
-<del>`hotcss.js`必须尽可能早的加载，千万不要放到`body`标签后面或者异步加载它。</del>
 根据页面渲染机制，`hotcss.js`必须在其他JS加载前加载，万不可异步加载。
 
 如果可以，你应将`hotcss.js`的内容以内嵌的方式写到`<head>`标签里面进行加载，并且保证在其他js文件之前。
@@ -67,7 +67,7 @@
 
 #### css要怎么写
 
-你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less`两个文件。没错，这就是`hotcss`提供的将px转为rem的方法。
+你可能已经注意到在`src/`目录下有`px2rem.scss/px2rem.less/px2rem.styl`三个文件。没错，这就是`hotcss`提供的将px转为rem的方法，可根据您的需要选择使用。
 
 推荐使用scss来编写css，在scss文件的头部使用`import`将`px2rem`导入
 
