@@ -39,7 +39,7 @@
 - [爆米兔](http://www.baomitu.com/)
 - [一起作业](http://17zuoye.com/)
 - [TalkingData](http://www.talkingdata.com/)
-- [电兔TV](http://www.diantu.tv/?from=hotcss)
+- [电兔贷款](http://app.diantudaikuan.com/?from=hotcss)
 - [新浪show](http://show.sina.com.cn/)
 
 ### 优势
