@@ -27,8 +27,8 @@
 | 示例名称      |     演示地址 |  贡献者 |
 | :-------- |:-------- | :--------: | 
 | 普通的演示    |   http://imochen.github.io/hotcss/example/normal/ | 墨尘 | 
-| duang游戏    |   http://imochen.github.io/hotcss/example/duang/ | [阳阳](https://github.com/iwuly)|
-| 灰太狼    |   http://imochen.github.io/hotcss/example/wolf/ | [阳阳](https://github.com/iwuly) |
+| duang游戏    |   http://imochen.github.io/hotcss/example/duang/ | [阳阳](https://github.com/Keraun)|
+| 灰太狼    |   http://imochen.github.io/hotcss/example/wolf/ | [阳阳](https://github.com/Keraun) |
 
 
 ### 谁在用hotcss
