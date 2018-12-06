@@ -1,5 +1,2 @@
-example/
-.gitignore
-bower.json
-.sass-cache
-config.codekit
+node_modules/
+test/

@@ -1,14 +1,14 @@
 {
   "name": "hotcss",
-  "version": "2.2.1",
-  "description": "Make Mobile Development Layout More Easy.",
-  "main": "src/hotcss.js",
+  "version": "2.1.0",
+  "description": "Make mobile development layouts easier",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx uglifyjs src/hotcss.js -c -m -o dist/hotcss.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imochen/hotcss.git"
+    "url": "git+https://github.com/imochen/hotcss.git"
   },
   "keywords": [
     "rem",
@@ -21,10 +21,10 @@
     "hotcss",
     "mochen"
   ],
-  "author": "mochen <imochen@163.com>",
+  "author": "mochen <mochen.china@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/imochen/hotcss/issues"
   },
-  "homepage": "https://github.com/imochen/hotcss"
+  "homepage": "https://github.com/imochen/hotcss#readme"
 }
